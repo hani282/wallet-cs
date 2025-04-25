@@ -1,0 +1,16 @@
+CREATE DATABASE ewallet CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE ewallet;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE transactions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    sender VARCHAR(50),
+    receiver VARCHAR(50),
+    amount DECIMAL(20, 8),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
